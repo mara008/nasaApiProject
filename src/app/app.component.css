@@ -1,0 +1,339 @@
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p, button {
+  font-size: 18px;
+}
+
+.parent-container-image {
+  position: relative;
+}
+
+.full-size-image {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #00000073;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.img-sizing {
+  width: 100%;
+  height: 329px;
+  object-fit: cover;
+}
+
+h3.text-xl.font-bold.mb-2.imgTitle {
+  height: 56px;
+}
+
+p.imgDate {
+  margin-bottom: 10px;
+}
+
+.relative.datepicker {
+  margin: 20px 0;
+}
+
+/*  */
+.glass-container {
+  position: relative;
+}
+
+/* Add animation styles for elements with the 'visible' class */
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+/* Set initial opacity to 0 for elements with the 'visible' class */
+.visible:not(.in-view) {
+  opacity: 0;
+}
+
+.relative.datepicker label {
+  margin-right: 10px;
+}
+
+/* image expalantion hover */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+
+  height: 330px;
+  width: 100%;
+  background-color: antiquewhite;
+  overflow: hidden;
+}
+
+.image-wrapper img,
+.picture-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  text-align: center;
+  padding: inherit;
+}
+
+.image-wrapper:hover .image-text {
+  opacity: 1;
+}
+
+.image-text p {
+  height: calc(100% - 42px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: revert;
+}
+
+span.image-text:after {
+  content: "...";
+  position: absolute;
+  bottom: 20px;
+}
+
+.lazyGal {
+  padding: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.intersectContainer {
+  display: block;
+  width: 100%;
+  height: 150px;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
+  padding: inherit;
+}
+
+/* loader animation */
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+/* */
+.videoDiv span,
+.videoDiv button {
+  position: relative;
+  /* display: flex; */
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.picture-wrapper {
+  height: 350px;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+p.textOverlay {
+  padding: 10px;
+}
+
+.modalContainer {
+  border: 1px solid #5d5d5d;
+}
+
+.title {
+  height: 48px;
+}
+
+.videoDiv {
+  position: relative;
+}
+
+.videoDiv svg.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  fill: white;
+  cursor: pointer;
+  background: #3f83f8;
+}
+
+
+ng-flatpickr {
+  width: 300px;
+  display: block;
+}
+
+.filterContainer input, .filterContainer button {
+  width: 270px;
+}
+
+.filterContainer {
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.filterContainer span {
+  margin: 10px 10px 10px 0;
+}
+
+.filterContainer  ul {
+  cursor: pointer;
+  z-index: 1;
+  width: max-content;
+  padding: 5px;
+
+}
+
+li:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
