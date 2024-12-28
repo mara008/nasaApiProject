@@ -1,6 +1,32 @@
 # NasaApiProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+A private application that leverages the NASA Astronomy Picture of the Day (APOD) API to render stunning astronomical imagery. 
+This project features:
+    Dynamic image retrieval from NASA's APOD API
+    Lazy loading for optimized performance
+    Tailwind CSS for responsive and modern styling 
+    Ability to select images from a specific time range
+
+Technical Specifications:
+    Angular CLI: 17.3.6
+    Angular: 17.3.7
+    Node: 20.18.0
+    Package Manager: npm 10.8.2
+    OS: win32 x64
+
+References:
+    NASA APOD Website: https://apod.nasa.gov/apod/astropix.html
+    NASA API Documentation: https://api.nasa.gov/
+
+Technologies:
+    NASA APOD API
+    Lazy Loading
+    Tailwind CSS
+    Angular Framework
+
+Note: This is a private application for personal use, exploring the fascinating world of astronomical imagery.
+
 
 ## Development server
 
