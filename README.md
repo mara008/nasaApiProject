@@ -1,3 +1,12 @@
+# FirstSteps 
+
+1. Please generate an API-Key here:    
+    https://api.nasa.gov/
+ 
+2. Please create an environment.ts file
+3. Insert the API-Key in the environment class and enjoy the APP.
+ 
+
 # NasaApiProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
