@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from '../environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,9 @@ export class NasaServiceService {
   serviceURLMRP : string;
 
   constructor(private http: HttpClient) {
-    this.serviceURLAPOD = "https://api.nasa.gov/planetary/apod?api_key=qG7VDRVNg6fa94aquk0K9T2OGFnokcxfqalN2b6X";
-    this.serviceURLMRP = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=qG7VDRVNg6fa94aquk0K9T2OGFnokcxfqalN2b6X";
+
+   this.serviceURLAPOD = environment.nasaApiKeyAPOD;
+   this.serviceURLMRP = environment.nasaApiKeyLMRP;
 
    }
 
