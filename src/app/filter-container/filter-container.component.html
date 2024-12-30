@@ -1,0 +1,76 @@
+<div class="filter">
+    <h2 class="text-2xl font-bold mb-4 text-sky-500">Recent Astronomy APODs:</h2>
+  
+    <div id="filterWrapper" class="filterContainer bg-gray-700 dark:bg-gray-800 rounded-lg ring-1 ring-slate-900/5 shadow-xl mt-[30px] mb-[30px]">
+      <div class="row">
+      <div class="col-12">
+        <div class="item">
+          <h2 class="text-2xl font-medium mb-4 text-sky-500">Date Selection:
+            {{ startDate | date:'dd.MM.yyyy' }} bis
+            {{ endDate | date:'dd.MM.yyyy' }}
+          </h2>
+      
+        </div> 
+    
+      </div>
+      
+      </div>
+  
+      <div class="row">
+   
+        <div class="col">
+          <div class="item">     <!-- Date picker -->
+            <label>Choose a Start Date:</label>
+            <input id="datepicker" style="max-width: 300px;" [(ngModel)]="startDate"
+              (ngModelChange)="onDateRangeChange($event)" type="date"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Select a date range" max="{{ today | date:'yyyy-MM-dd' }}" />     
+          </div>
+          <div class="item"> 
+            <label>Choose a Timerange:</label>
+            <!-- Dropdwn New-->
+            <div class=" text-left">
+              <div>
+                <button type="button" 
+                        (click)="toggleDropdown()" 
+                        class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" 
+                        id="menu-button" 
+                        aria-expanded="true" 
+                        aria-haspopup="true">
+                  {{ selectedView }}
+                  <svg class="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            
+              <ng-container *ngIf="dropdownOpen" >
+              <div class="dropdownViewSelect absolute  z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none" 
+                   role="menu" 
+                   aria-orientation="vertical" 
+                   aria-labelledby="menu-button" 
+                   tabindex="-1">
+                <div class="py-1" role="none">
+              
+                  <a (click)="onViewChange('Day')" class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1">Day View</a>
+                  <a (click)="onViewChange('Week')" class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1">Weekly View</a>
+                  <a (click)="onViewChange('Month')" class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1">Monthly View</a>
+                  <a (click)="onViewChange('Three months')" class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1">Three Monthly View</a>
+                </div>
+              </div>
+          </ng-container>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="item">
+            <!-- Load Images Button -->
+            <button (click)="submitFilter()"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">Load Images</button>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  

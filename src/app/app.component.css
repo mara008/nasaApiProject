@@ -48,10 +48,6 @@ p.imgDate {
   margin-bottom: 10px;
 }
 
-.relative.datepicker {
-  margin: 20px 0;
-}
-
 /*  */
 .glass-container {
   position: relative;
@@ -67,9 +63,7 @@ p.imgDate {
   opacity: 0;
 }
 
-.relative.datepicker label {
-  margin-right: 10px;
-}
+
 
 /* image expalantion hover */
 .image-wrapper {
@@ -309,31 +303,9 @@ ng-flatpickr {
   display: block;
 }
 
-.filterContainer input, .filterContainer button {
-  width: 270px;
-}
 
-.filterContainer {
-  display: flex;
-  align-items: end;
-  justify-content: flex-start;
-  width: fit-content;
-  flex-wrap: wrap;
-}
 
-.filterContainer span {
-  margin: 10px 10px 10px 0;
-}
-
-.filterContainer  ul {
-  cursor: pointer;
-  z-index: 1;
-  width: max-content;
-  padding: 5px;
-
-}
-
-li:hover {
-  background-color: lightgray;
+div.glass-container:hover {
+  background-color: rgb(14 165 233 / var(--tw-text-opacity));
   cursor: pointer;
 }

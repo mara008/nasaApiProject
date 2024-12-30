@@ -11,6 +11,7 @@
     </header>
 
 
+
     <!--  NO DATA TEMPLATE -->
     <ng-template #loader>
       <section class="mb-8 relative" style="display: flex; justify-content: center;">
@@ -19,7 +20,6 @@
     </ng-template>
 
     <ng-template #noDataDiv>
-
       <!-- Display this div when dataList is empty -->
       <main class="container mx-auto px-4 py-8">
         <div class="introduction">
@@ -75,70 +75,18 @@
       </ng-container>
 
       <!-- Filter container -->
-      <div>
-        <h2 class="text-2xl font-bold mb-4 text-sky-500">Recent Astronomy
-          APODs:</h2>
-
-        <div
-          class="filterContainer bg-gray-700 dark:bg-gray-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl mt-[30px] mb-[30px]">
-          <div class="col">
-            <span>
-              <h2 class="text-2xl font-medium mb-4 text-sky-500">Date Selection:
-                {{startDate | date:'dd.MM.yyyy' }} bis
-                {{ endDate | date:'dd.MM.yyyy' }}
-              </h2>
-
-              <!-- Date picker -->
-              <label>Wähle ein Startdatum:</label>
-              <input id="datepicker" style="max-width: 300px;" [(ngModel)]="selectedDate"
-                (ngModelChange)="selectView(selectedView)" (change)="onDateRangeSelected($event)" type="date"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Select a date range" max="{{today | date:'yyyy-MM-dd'}}" />
-              <ng-container *ngIf="showErrorMessage">
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                  <strong class="font-bold">Error! </strong>
-                  <span class="block sm:inline">{{errorMessage}}</span>
-                  <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                  </span>
-                </div>
-              </ng-container>
-            </span>
-
-            <span>
-              <!-- dropdown -->
-              <div class="relative dropdown-views">
-
-                <button class="px-4 py-2 border rounded" (click)="toggleDropdown()">{{ selectedView }}</button>
-                <ul *ngIf="dropdownOpen" class="absolute text-gray-900 bg-white border rounded mt-1">
-                  <li (click)="selectView('day')">Day View</li>
-                  <li (click)="selectView('week')">Weekly View</li>
-                  <li (click)="selectView('month')">Monthly View</li>
-                  <li (click)="selectView('three months')">Three Monthly View</li>
-
-                </ul>
-              </div>
-            </span>
-          </div>
-
-          <div class="col">
-            <span> <button (click)="loadImages()"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">Load
-                Images</button></span>
-          </div>
-        </div>
-      </div>
+      <app-filter-container  
+      (filterStateChanged)="onFilterStateChanged($event)" >
+    </app-filter-container>
+       
 
       <!-- grid - last images -->
       <ng-container *ngIf="(apodImages$ | async) as apodImages; else loader">
-
         <section class="mb-8 relative">
           <!-- lazy loading -->
-
           <section>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <ng-container *ngFor="let image of apodImages">
-
                 <div (click)="showPopup = true; selectedImage = image"
                   (keypress)="showPopup = true; selectedImage = image"
                   class="glass-container bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-6 ">

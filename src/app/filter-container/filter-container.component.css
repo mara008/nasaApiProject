@@ -1,0 +1,57 @@
+.filterContainer input, .filterContainer button {
+    width: 270px;
+    height: 42.5px;
+    justify-content: space-between;
+  }
+  
+.filterContainer {
+    display: flex;
+    align-items: start;
+  
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1.125rem;
+ 
+    }
+  
+    div#filterWrapper .row:last-child {
+      justify-content: space-between;
+      display: flex;
+      width: 100%;
+  }
+  .filterContainer .row,
+  .filterContainer .row .col {
+    flex-wrap: wrap;
+}
+  
+  div#filterWrapper .row:last-child .col {
+    display: flex;
+    align-items: end;
+}
+
+.item {
+  margin: .5rem;
+}
+
+  .filterContainer  .dropdownViewSelect a {
+    cursor: pointer;
+    z-index: 1;
+    width: max-content;
+    padding: 5px;
+  
+  }
+  a.block.px-4.py-2.text-sm.text-gray-700.cursor-pointer:hover {
+    background: rgb(63 131 248 / var(--tw-bg-opacity));
+    width: 100%;
+    display: block;
+}
+
+  .relative.datepicker label {
+    margin-right: 10px;
+  }
+
+  
+.relative.datepicker {
+    margin: 20px 0;
+  }
+  
